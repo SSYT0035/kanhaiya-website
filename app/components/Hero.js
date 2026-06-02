@@ -246,20 +246,20 @@ export default function Hero() {
       }} />
 
       {/* Corner brackets - top left */}
-      <div style={{ position: 'absolute', top: '80px', left: '44px', zIndex: 4, opacity: 0.3, animation: 'fadeInDown 1s 0.5s ease both' }}>
+      <div className="hide-on-mobile" style={{ position: 'absolute', top: '80px', left: '44px', zIndex: 4, opacity: 0.3, animation: 'fadeInDown 1s 0.5s ease both' }}>
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
           <path d="M0 14 L0 0 L14 0" stroke="#60a5fa" strokeWidth="1.5"/>
         </svg>
       </div>
       {/* Corner brackets - top right */}
-      <div style={{ position: 'absolute', top: '80px', right: '44px', zIndex: 4, opacity: 0.2, animation: 'fadeInDown 1s 0.7s ease both' }}>
+      <div className="hide-on-mobile" style={{ position: 'absolute', top: '80px', right: '44px', zIndex: 4, opacity: 0.2, animation: 'fadeInDown 1s 0.7s ease both' }}>
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
           <path d="M28 14 L28 0 L14 0" stroke="#60a5fa" strokeWidth="1.5"/>
         </svg>
       </div>
 
       {/* Vertical coordinate labels */}
-      <div style={{
+      <div className="hide-on-mobile" style={{
         position: 'absolute', right: '20px', top: '50%', zIndex: 4,
         transform: 'translateY(-50%) rotate(90deg)',
         fontSize: '0.55rem', letterSpacing: '0.2em', color: 'rgba(96,165,250,0.2)',
@@ -280,7 +280,7 @@ export default function Hero() {
         gridTemplateColumns: '1fr auto',
         gap: '60px',
         alignItems: 'center',
-        paddingTop: '130px',
+        paddingTop: '160px',
         paddingBottom: '80px',
         position: 'relative',
         zIndex: 5,
@@ -521,9 +521,13 @@ export default function Hero() {
         }
         @media (max-width: 900px) {
           .hero-capabilities { display: none !important; }
+          .hide-on-mobile { display: none !important; }
         }
         @media (max-width: 600px) {
-          .hero-main-grid { grid-template-columns: 1fr !important; padding: 0 24px !important; }
+          .hero-main-grid { 
+            grid-template-columns: 1fr !important; 
+            padding: 120px 24px 60px !important; 
+          }
         }
       `}</style>
     </section>
